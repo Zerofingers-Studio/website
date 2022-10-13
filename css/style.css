@@ -443,7 +443,7 @@ a {
 .fingers-container {
     flex: 1;
 
-    padding: 5vw;
+    padding: 0 5vw;
 }
 
 .fingers-title {
