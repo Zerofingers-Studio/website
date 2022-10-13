@@ -1,9 +1,12 @@
 :root {
     --background-color-1: rgb(24, 25, 48);
     --background-color-2: rgb(17, 18, 33);
-    --background-color-overlay: rgba(24, 25, 48, 0.75);
+    --background-color-overlay: rgba(17, 18, 33, 0.8);
+    --background-color-game-card: rgb(0, 0, 0);
     --background-color-footer: rgb(255, 255, 255);
     
+    --border-radius: 6px;
+
     --color-1: rgb(255, 255, 255);
 }
 
@@ -88,6 +91,8 @@ a {
 
     font-size: 2em;
     font-weight: 600;
+
+    margin-bottom: 2vh;
 }
 
 .section-landing {
@@ -108,8 +113,8 @@ a {
 
     transform: translate(-50%, -50%);
 
-    width: 100%;
-    height: 100%;
+    width: 102%;
+    height: 102%;
 
     background-color: var(--background-color-overlay);
 
@@ -124,8 +129,8 @@ a {
 
     transform: translate(-50%, -50%);
     
-    width: 100vw;
-    height: 100vh;
+    width: 102vw;
+    height: 102vh;
 
     border: none;
 
@@ -136,12 +141,12 @@ a {
 
 @media (min-aspect-ratio: 16/9) {
     .section-landing > .background > iframe {
-        height: calc(100vw * (9 / 16));
+        height: calc(102vw * (9 / 16));
     }
 }
 @media (max-aspect-ratio: 16/9) {
     .section-landing > .background > iframe {
-        width: calc(100vh / (9 / 16));
+        width: calc(102vh / (9 / 16));
     }
 }
 
@@ -157,6 +162,157 @@ a {
 
     font-size: 4em;
     font-weight: 800;
+}
+
+.game-cards-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 32px;
+}
+
+.game-card {
+    position: relative;
+
+    width: 5vw;
+    min-width: 300px;
+    min-height: 500px;
+    
+    border-radius: var(--border-radius);
+
+    background-color: var(--background-color-game-card);
+
+    cursor: pointer;
+
+    box-shadow: 2px 2px 5px 1px rgba(0,0,0,0.25);
+    
+    z-index: 0;
+    
+    overflow: hidden;
+    
+    transition: transform 1s;
+    box-shadow: transform 1s;
+}
+
+.game-card:hover {
+    transform: scale(1.1);
+    box-shadow: 2px 2px 20px 4px rgba(0,0,0,0.25);
+
+    z-index: 1;
+}
+
+.game-card-status {
+    position: absolute;
+
+    top: 8px;
+    left: 8px;
+
+    font-weight: 200;
+}
+
+.game-card-status > img {    
+    width: auto;
+    height: 20px;
+}
+
+.game-card-platform {
+    position: absolute;
+
+    top: 8px;
+    right: 8px;
+}
+
+.game-card-platform > img {
+    width: 20px;
+    height: 20px;
+}
+
+.game-card-main {
+    position: absolute;
+
+    height: 75%;
+    width: 100%;
+
+    bottom: 0;
+
+    padding: 0 8px;
+}
+
+.game-card-title {
+    display: flex;
+    align-items: flex-end;
+
+    height: 50%;
+
+    font-size: 2em;
+    font-weight: 600;
+}
+
+.game-card-discription a {
+    white-space: nowrap;
+}
+
+.game-card-discription a:hover {
+    text-decoration: underline;
+}
+
+.game-card-discription img {
+    width: auto;
+    height: 0.9em;
+}
+
+.game-card-background {
+    position: absolute;
+    
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    height: 102%;
+    width: 102%;
+
+    filter: blur(4px);
+
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.game-card-background > div {
+    position: absolute;
+    
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    height: 102%;
+    width: 102%;
+
+    background-color: var(--background-color-overlay);
+}
+
+.game-card-background[data-game="rts-rust"] {
+    background-image: url(../assets/images/rust_background.jpg);
+}
+
+.game-card-background[data-game="unboxholics"] {
+    background-image: url(../assets/images/unboxholics_background.png);
+}
+
+.rust {
+    color: #ca402a;
+}
+
+.unboxholics {
+    color: #fe183a;
+}
+
+.twitch {
+    color: #9146ff;
 }
 
 .section-about {
