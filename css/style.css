@@ -5,6 +5,9 @@
     --background-color-game-card: rgb(0, 0, 0);
     --background-color-footer: rgb(255, 255, 255);
     
+    --background-img-games-rts-rust: url(../assets/images/games/rust_background.jpg);
+    --background-img-games-unboxholics: url(../assets/images/games/unboxholics_background.png);
+
     --border-radius: 6px;
 
     --color-1: rgb(255, 255, 255);
@@ -305,11 +308,11 @@ a {
 }
 
 .game-card-background[data-game="rts-rust"] {
-    background-image: url(../assets/images/rust_background.jpg);
+    background-image: var(--background-img-games-rts-rust);
 }
 
 .game-card-background[data-game="unboxholics"] {
-    background-image: url(../assets/images/unboxholics_background.png);
+    background-image: var(--background-img-games-unboxholics);
 }
 
 .rust {
@@ -324,9 +327,230 @@ a {
     color: #9146ff;
 }
 
+.steam {
+    color: #0e70a2;
+}
+
 .section-about {
     background-color: var(--background-color-2);
 }
+
+.about-container {
+    max-width: 500px;
+    
+    margin: auto;
+
+    font-size: 1.1em;
+    text-align: justify;
+}
+
+.about-container img {
+    width: auto;
+    height: 0.9em;
+}
+
+.team-container {
+    max-width: 800px;
+
+    border-radius: 100px;
+
+    margin: auto;
+}
+
+.team-person {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: flex-start;
+    align-items: center;
+
+    gap: 0 16px;
+
+    margin-bottom: 16px;
+
+    background-color: var(--background-color-2);
+    
+    border-radius: 100px;
+
+    text-align: left;
+
+    transition: transform 1s;
+}
+
+.team-person-animation {
+    animation-name: team-person-animation-keyframes;
+    animation-duration: 2s;
+    animation-timing-function: ease;
+    animation-fill-mode: forwards;
+}
+
+@keyframes team-person-animation-keyframes {
+    0%      { transform: scale(0.0); }
+    100%    { transform: scale(1.0); }
+}
+
+.team-person:nth-child(even) {
+    flex-direction: row-reverse;
+
+    text-align: right;
+}
+
+.team-person-img {
+    width: 200px;
+    height: 200px;
+
+    border-radius: 100px;
+    
+    background-color: var(--background-color-2);
+
+    opacity: 0;
+
+    overflow: hidden;
+}
+
+.team-person-img.team-person-img-animation {
+    animation-name: team-person-img-animation-keyframes;
+    animation-duration: 4s;
+    animation-timing-function: ease;
+    animation-fill-mode: forwards;
+}
+
+@keyframes team-person-img-animation-keyframes {
+    0%      { opacity: 0; }
+    100%    { opacity: 1; }
+}
+
+.team-person-img img {
+    width: 100%;
+    height: auto;
+}
+
+.team-person-name {
+    font-size: 1.75em;
+    font-weight: 600;
+}
+
+.team-person-name:hover {
+    text-decoration: underline;
+}
+
+.team-person-position {
+    font-size: 1em;
+    font-weight: 200;
+}
+
+.fingers-container {
+    flex: 1;
+
+    padding: 5vw;
+}
+
+.fingers-title {
+    font-size: 1.1em;
+    font-weight: 200;
+
+    text-align: center;
+}
+
+.fingers-bar {
+    position: relative;
+
+    font-size: 0.8em;
+    font-weight: 200;
+}
+
+.fingers-background {
+    width: 100%;
+    height: 25px;
+
+    border-radius: var(--border-radius);
+    
+    background-color: rgba(255, 255, 255, 0.2);
+
+    overflow: hidden;
+}
+
+.fingers-active {
+    position: absolute;
+
+    top: 0;
+    
+    width: 0;
+    height: 25px;    
+}
+
+.fingers-active.fingers-active-animation {
+    animation-name: fingers-active-animation-keyframes;
+    animation-duration: 4s;
+    animation-timing-function: ease;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fingers-active-animation-keyframes {
+    0%      { width: 0; }
+    100%    { width: 50%; }
+}
+
+.fingers-active[data-direction="plus"] {
+    left: 50%;
+    border-radius: 0 var(--border-radius) var(--border-radius) 0;
+
+    background-color: rgba(30, 255, 0, 0.8);
+}
+
+.fingers-active[data-direction="minus"] {
+    right: 50%;
+    border-radius: var(--border-radius) 0 0 var(--border-radius);
+
+    background-color: rgba(255, 0, 0, 0.8);
+}
+
+.fingers-label-minus100 {
+    position: absolute;
+
+    top: 100%;
+    left: 0;
+
+    color: rgba(255, 0, 0, 0.8);
+}
+
+.fingers-label-0 {
+    position: absolute;
+
+    top: 100%;
+    left: 50%;
+
+    transform: translateX(-50%);
+}
+
+.fingers-label-plus100 {
+    position: absolute;
+
+    top: 100%;
+    right: 0;
+
+    color: rgba(30, 255, 0, 0.8);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 .footer {
     width: 100vw;
