@@ -192,8 +192,9 @@ a {
     
     overflow: hidden;
     
-    transition: transform 1s;
-    box-shadow: transform 1s;
+    transition: 
+        transform 1s,
+        box-shadow 1s;
 }
 
 .game-card:hover {
@@ -205,6 +206,10 @@ a {
 
 .game-card-status {
     position: absolute;
+
+    display: flex;
+    align-items: center;
+    gap: 0 0.3em;
 
     top: 8px;
     left: 8px;
@@ -252,6 +257,10 @@ a {
 
 .game-card-discription a {
     white-space: nowrap;
+
+    display: inline-flex;
+    gap: 0 0.1em;
+    align-items: baseline;
 }
 
 .game-card-discription a:hover {
