@@ -1,3 +1,5 @@
+// on scroll animations
+
 const onScrollAnimationElements = document.querySelectorAll('.onScrollAnimation');
 const elementVisible = 150;
 
@@ -22,6 +24,8 @@ window.onscroll = () => {
 };
 
 playInAnimationOnScroll();
+
+// console
 
 console.log(
     "%cFacepunch if you see this, please hire me!",
