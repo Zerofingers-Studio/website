@@ -34,12 +34,25 @@ html, body {
 }
 
 @media (max-width: 600px) {
-    html, body {
-        font-size: 8pt;
-    }
-
     .navbar_buttons {
         display: none !important;
+    }
+
+    .section-landing > .title {
+        font-size: 2.5em !important;
+    }
+
+    .team-person {
+        gap: 0 8px !important;
+    } 
+
+    .team-person-img {
+        width: 100px !important;
+        height: 100px !important;
+    }
+
+    .team-person-name {
+        font-size: 1.5em !important;
     }
 }
 
